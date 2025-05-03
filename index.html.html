@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
+    
+     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+ 
+</head>
+<body>
+    <h1>Calvary Touch of God Church Volunteer Participation Form</h1>
+    
+    <div class="form-group">
+        <label for="eventDate">Service Date:</label>
+        <input type="date" id="eventDate" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="volunteerName">Volunteer Name:</label>
+        <input type="text" id="volunteerName" placeholder="Full name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="contactInfo">Contact Information (phone number and email):</label>
+        <input type="text" id="contactInfo" placeholder="phone number and email">
+    </div>
+    
+    <div class="form-group">
+        <label for="hoursServed">Hours Served:</label>
+        <input type="number" id="hoursServed" min="0.5" step="0.5" value="1">
+    </div>
+    
+    <div class="form-group">
+        <label for="serviceType">Type of Service:</label>
+        <select id="serviceType">
+            <option value="logistics">Logistics and Transportation</option>
+            <option value="packaging">Food Packaging</option>
+            <option value="registrar">Data Entry and Collection</option>
+            <option value="runner">Runner</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    
+    <button onclick="addVolunteer()">Record Participation</button>
+    
+    <h2>Today's Volunteers</h2>
+    <table id="volunteerTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Hours</th>
+                <th>Service Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Volunteer entries will appear here -->
+        </tbody>
+    </table>
+
+     <script src="/__/firebase/init.js?useEmulator=true"></script> 
+     <script src="script.js"></script>
+</body>
+</html>
